@@ -1,0 +1,30 @@
+USUARIOS
+- id_usuario (PK)
+- nome
+- email
+- senha
+- tipo_usuario
+- data_cadastro
+
+CATEGORIAS
+- id_categoria (PK)
+- nome
+- descricao
+
+ITENS
+- id_item (PK)
+- id_categoria (FK)
+- id_usuario (FK)
+- nome
+- descricao
+- tipo_registro
+- local
+- data_registro
+- status
+
+DEVOLUCOES
+- id_devolucao (PK)
+- id_item (FK)
+- id_usuario (FK)
+- id_responsavel (FK)
+- data_devolucao
