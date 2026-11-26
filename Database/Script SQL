@@ -1,0 +1,79 @@
+##Criação do banco de dados
+
+
+CREATE DATABASE sistema_achados_perdidos;
+
+USE sistema_achados_perdidos;
+
+##Criação da tabela de usuários
+
+
+CREATE TABLE usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    tipo_usuario ENUM(
+        'RESPONSAVEL',
+        'COMUNIDADE'
+    ) NOT NULL,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+##Criação da tabela de categorias
+
+
+CREATE TABLE categorias (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL UNIQUE,
+    descricao TEXT
+);
+
+##Criação da tabela de itens
+
+
+CREATE TABLE itens (
+    id_item INT AUTO_INCREMENT PRIMARY KEY,
+    id_categoria INT NOT NULL,
+    id_usuario INT NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    tipo_registro ENUM(
+        'PERDIDO',
+        'ENCONTRADO'
+    ) NOT NULL,
+    local VARCHAR(150),
+    data_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status ENUM(
+        'DISPONIVEL',
+        'EM_PROCESSO',
+        'DEVOLVIDO'
+    ) DEFAULT 'DISPONIVEL',
+
+    FOREIGN KEY (id_categoria)
+        REFERENCES categorias(id_categoria),
+
+    FOREIGN KEY (id_usuario)
+        REFERENCES usuarios(id_usuario)
+);
+
+##Criação da tabela de devoluções
+
+
+CREATE TABLE devolucoes (
+    id_devolucao INT AUTO_INCREMENT PRIMARY KEY,
+    id_item INT NOT NULL UNIQUE,
+    id_usuario INT NOT NULL,
+    id_responsavel INT NOT NULL,
+    data_devolucao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    observacoes TEXT,
+
+    FOREIGN KEY (id_item)
+        REFERENCES itens(id_item),
+
+    FOREIGN KEY (id_usuario)
+        REFERENCES usuarios(id_usuario),
+
+    FOREIGN KEY (id_responsavel)
+        REFERENCES usuarios(id_usuario)
+);
