@@ -1,5 +1,6 @@
 # Titulo
 DESENVOLVIMENTO DE UM SISTEMA WEB PARA GERENCIAR OBJETOS ACHADOS E PERDIDOS NA ETEC DE CAMPO LIMPO PAULISTA 
+<img width="500" height="750" alt="Etecamp Finder" src="https://github.com/user-attachments/assets/5e3804b4-ca6f-4dc1-8856-ff321f5cc670" />
 
 ## Descrição 
 Um sistema de achados e perdidos que auxilia na organização e controle dos achados e perdidos, ajudando na comunicação entre comunidade e responsáveis pelo sistema, centralização de informações e registro de ocorrências
