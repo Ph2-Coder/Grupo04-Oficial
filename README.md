@@ -38,3 +38,5 @@ Depois, para ligar a outra parte do sistema, abra uma nova aba de comandos, entr
 SANTANA, Davi Alexandre Salves; ALVES, Guilherme; MOURA, Pedro Henrique Hahnl. Desenvolvimento de um sistema web para gerenciar objetos achados e perdidos da ETEC de Campo Limpo Paulista. 2026. 35 p. 
 
 Em caso de dúvidas entre em contato com phtadm2008@gmail.com ou com guilhermealves29pao@gmail.com 
+
+Para acessar o trabalho escrito do projeto: https://ric.cps.sp.gov.br/
